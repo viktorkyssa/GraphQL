@@ -196,6 +196,6 @@ const Query = new GraphQLObjectType({
 });
 
 module.exports = new GraphQLSchema({
-  query: Query,
+	query: Query,
 	mutation: Mutation,
 });
