@@ -53,9 +53,9 @@ class MoviesTable extends React.Component {
   render() {
     const { anchorEl, openDialog, data: activeElem = {} } = this.state;
 
-    const { classes } = this.props;
+    const { classes, data = {} } = this.props;
 
-    console.log(this.props.data);
+    const { movies = [] } = data;
 
     return (
       <>
@@ -79,7 +79,7 @@ class MoviesTable extends React.Component {
                     <TableCell component="th" scope="row">{movie.name}</TableCell>
                     <TableCell>{movie.genre}</TableCell>
                     <TableCell align="right">{movie.rate}</TableCell>
-                    <TableCell>{movie.director.name}</TableCell>
+                    <TableCell>{movie.director ? movie.director.name : ''}</TableCell>
                     <TableCell>
                       <Checkbox checked={movie.watched} disabled />
                     </TableCell>
